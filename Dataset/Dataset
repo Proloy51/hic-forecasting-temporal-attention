@@ -1,2 +1,38 @@
+Hi-C Temporal Forecasting Dataset
+
+Description:
+This dataset contains sequential Hi-C contact matrices used for training and evaluating
+CNN-based Hi-C forecasting models with temporal attention mechanisms. The data is
+organized to support next-step prediction from historical Hi-C matrices.
+
+Data Format:
+- Each sample consists of a sequence of historical Hi-C matrices and a corresponding
+  target future matrix.
+- Input shape: [T, H, W], where T denotes the number of historical time steps.
+- Target shape: [H, W].
+- All matrices are normalized to the range [0, 1].
+
+Temporal Setup:
+- Historical window size (T): 2
+- Prediction target: next time-step Hi-C matrix
+
+Train/Test Split:
+- Training set: 80%
+- Test set: 20%
+- The split is performed sequentially to preserve temporal order.
+
+Resolution:
+- Hi-C matrix resolution is consistent across all samples.
+- The same resolution is used for all experiments to ensure fair comparison.
+
+Usage:
+This dataset was used consistently across all experiments, including:
+- Baseline CNN model
+- Single-head temporal attention model
+- Multi-head temporal attention model
+
+The dataset is provided for reproducibility and evaluation purposes.
+View-only access is enabled to preserve data integrity.
+
 To access the dataset follow the link attatched below:
 https://drive.google.com/file/d/1NF8KM0ZI9-ZrbXsb-HJ79nhMmvRoouDm/view?usp=sharing
